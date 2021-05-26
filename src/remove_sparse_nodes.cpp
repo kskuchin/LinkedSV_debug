@@ -133,6 +133,8 @@ int remove_sparse_nodes(const char *in_node_file, const char *out_node_file, int
                 idx2 = (int) node_pos2 / distance_limit;
                 if (idx1 >= n_bin1 || idx2 >= n_bin2){
                     fprintf(stderr, "WARNING! Node coordinate larger than chromosome length! Skipped this node.\n");
+                    fprintf(stderr, "tid1: %s, node_pos1: %s, idx1: %s, n_bin1: %s\n", tid1, node_pos1, idx1, n_bin1);
+                    fprintf(stderr, "tid2: %s, node_pos2: %s, idx2: %s, n_bin2: %s\n", tid2, node_pos2, idx2, n_bin2);
                 }else{
                     squre_node_count[idx1][idx2] += 1;
                 }
